@@ -1,9 +1,9 @@
-import { useState, useEffect } from "module";
+import { useState, useEffect } from "react";
 //import { Component } from 'react';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Dna } from  'react-loader-spinner'
+//import { Dna } from  'react-loader-spinner'
 
 import { SectionApp } from './SectionApp/SectionApp';
 import { Searchbar } from './Searchbar/Searchbar';
@@ -19,7 +19,7 @@ export const App = () => {
   //const [totalHits, setTotalHits] = useState(0);
   //const [imagesOnPage, setImagesOnPage] = useState(0);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
   //const [showModal, setShowModal] = useState(false);
   //const [currentLargeImageUrl, setCurrentLargeImageUrl] = useState('');
 
@@ -54,7 +54,7 @@ export const App = () => {
   }, [page, searchData]);*/
 
   useEffect(() => {
-    setLoading(true);
+    //setLoading(true);
     FetchImages(searchData, page)
       .then(({ hits }) => {
 
@@ -92,14 +92,14 @@ export const App = () => {
     <SectionApp>
       <Searchbar onSubmit={handleFormSubmit} />
       <ImageGallery images={images} openModal={() => { }} />
-      <Dna
+      {/*<Dna
         visible={loading}
         height="80"
         width="80"
         ariaLabel="dna-loading"
         wrapperStyle={{}}
         wrapperClass="dna-wrapper"
-      />
+  />*/}
       {/*imagesOnPage >= 12 && imagesOnPage < totalHits && (
           <ButtonMore
             onClick={()=>{}}
